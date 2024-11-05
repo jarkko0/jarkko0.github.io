@@ -3,98 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salpa Grilli - Bensahinnat</title>
+    <title>salpagrilli.info!</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #e0f7fa;
-            color: #00796b;
+            background-color: #c0ff33;
+            color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
-        h1 {
+        header {
+            background-color: #ff6600;
+            padding: 20px;
             text-align: center;
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: bold;
+            position: relative;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
+        nav {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .sidebar {
+            background-color: #ff3333;
+            width: 200px;
+            float: left;
+            padding: 10px;
+            color: #fff;
+            height: 100vh;
+        }
+        .sidebar h2 {
+            font-size: 1.5em;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 5px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            margin-left: 220px;
             padding: 20px;
-            border: 1px solid #00796b;
-            border-radius: 8px;
-            background-color: #ffffff;
+            background-color: #fff;
+            color: #333;
         }
-        table {
+        .main-content h2 {
+            color: #ff3333;
+            font-size: 2em;
+            margin-top: 0;
+        }
+        .content-box {
+            background-color: #ffcc99;
+            border: 2px solid #ff6600;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+            bottom: 0;
         }
-        th, td {
-            border: 1px solid #00796b;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #00796b;
-            color: white;
-        }
-        form {
-            margin-top: 20px;
-        }
-        input[type="text"], input[type="email"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #00796b;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            background-color: #00796b;
-            color: white;
-            border: none;
-            padding: 10px;
+        .download-button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: 3px solid #333;
             cursor: pointer;
-            border-radius: 4px;
+            margin: 20px auto;
+            display: block;
+            text-align: center;
+            animation: bounce 1s infinite;
         }
-        input[type="submit"]:hover {
-            background-color: #004d40;
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        /* Kirjautumisnappula */
+        .login-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #ffcc00;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Salpa Grilli - Bensahinnat</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Polttoaine</th>
-                    <th>Hinta (€/l)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>95 E10</td>
-                    <td>1,59</td>
-                </tr>
-                <tr>
-                    <td>98 E5</td>
-                    <td>1,79</td>
-                </tr>
-                <tr>
-                    <td>Diesel</td>
-                    <td>1,49</td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Taustamusiikki -->
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Selaimesi ei tue ääniominaisuuksia.
+    </audio>
 
-        <h2>Ota yhteyttä</h2>
-        <form action="#" method="post">
-            <input type="text" name="name" placeholder="Nimi" required>
-            <input type="email" name="email" placeholder="Sähköposti" required>
-            <input type="text" name="message" placeholder="Viesti" required>
-            <input type="submit" value="Lähetä">
-        </form>
+    <header>
+        SALPAGRILLI.INFO - KEBAB & DIESEL
+        <button class="login-button">Kirjaudu</button>
+    </header>
+
+    <nav>
+        <a href="bensat.html">Bensat</a>
+        <a href="diisselit.html">Diisselit</a>
+        <a href="ruokalista.html">Ruokalista</a>
+        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="lounas.html">Lounas</a>
+    </nav>
+
+    <div class="sidebar">
+        <h2>Tuoteryhmät</h2>
+        <ul>
+            <li><a href="bensat.html">Bensat</a></li>
+            <li><a href="diisselit.html">Diisselit</a></li>
+            <li><a href="oljyt.html">Öljyt</a></li>
+            <li><a href="burritot.html">Burritot</a></li>
+            <li><a href="pitkakesto.html">Pitkäkestoinen Bensa</a></li>
+            <li><a href="tarjoukset.html">Tarjoukset</a></li>
+            <li><a href="kebab.html">Kebab</a></li>
+            <li><a href="pizza.html">Sovellus</li>
+        </ul>
+        <p><strong>Aukioloajat:</strong><br>
+            Ma: Suljettu<br>
+            Ti-Pe: 21-22<br>
+            La-Su: nyt</p>
     </div>
+
+    <div class="main-content">
+        <h2>Bensan Maailma</h2>
+        <div class="content-box">
+            <p>Bensa, tuo moottorien elämänlähde, on auttanut ihmisiä liikkumaan jo vuosisatoja. Tule ja koe bensan syvä historia sekä sen tarjoama energia!</p>
+        </div>
+        <h2>Diisselin Tulevaisuus</h2>
+        <div class="content-box">
+            <p>Diisseli on aina ollut vahva ja kestävä polttoaine. Sen käyttö kasvaa, ja tarjoamme sitä parhailla hinnoilla. Älä missaa diisselin voimaa!</p>
+        </div>
+        <a href="https://www.mediafire.com/file/s8cs1gz7wjelfzx/eemelinbensatietokanta.rar/file" target="_blank" class="download-button">DOWNLOAD!</a>
+    </div>
+
+    <footer>
+        © 2024 salpagrilli.info. Kaikki oikeudet pidetään.
+    </footer>
 
 </body>
 </html>
+
