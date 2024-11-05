@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yhteystiedot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c0ff33;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff6600;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: bold;
+            position: relative;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+        .rotating {
+            width: 200px;
+            animation: rotate 5s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .contact-info {
+            font-size: 1.5em;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg">
+        Selaimesi ei tue ääniominaisuuksia.
+    </audio>
+
+    <header>
+        Yhteystiedot
+        <a href="index.html"><img src="salpa.png" alt="Salpa Grilli" style="position: absolute; left: 20px; top: 20px; width: 100px;"></a>
+    </header>
+
+    <nav>
+        <a href="index.html">Etusivulle</a>
+        <a href="bensat.html">Bensat</a>
+        <a href="diisselit.html">Diisselit</a>
+        <a href="ruokalista.html">Ruokalista</a>
+    </nav>
+
+    <div class="main-content">
+        <h2>Ota Yhteyttä</h2>
+        <img src="https://www.lehtoresta.fi/img/cms/phone.png" alt="Pyörivä kebab" class="rotating">
+        <p class="contact-info">Voit ottaa meihin yhteyttä sähköpostitse: <strong>info@sapagrilli.info</strong> tai puhelimitse :      <strong>       +358 45 6064385</strong>.</p>
+        <p>Olemme täällä auttamassa sinua kaikissa kysymyksissä!</p>
+    </div>
+
+    <footer>
+        © 2025 salpagrilli.info. Kaikki oikeudet pidätetään.
+    </footer>
+
+</body>
+</html>
