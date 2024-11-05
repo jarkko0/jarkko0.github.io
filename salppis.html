@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salpa Grilli - Bensahinnat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #00796b;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #00796b;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #00796b;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #00796b;
+            color: white;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="email"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #00796b;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Salpa Grilli - Bensahinnat</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Polttoaine</th>
+                    <th>Hinta (€/l)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>95 E10</td>
+                    <td>1,59</td>
+                </tr>
+                <tr>
+                    <td>98 E5</td>
+                    <td>1,79</td>
+                </tr>
+                <tr>
+                    <td>Diesel</td>
+                    <td>1,49</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Ota yhteyttä</h2>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Nimi" required>
+            <input type="email" name="email" placeholder="Sähköposti" required>
+            <input type="text" name="message" placeholder="Viesti" required>
+            <input type="submit" value="Lähetä">
+        </form>
+    </div>
+
+</body>
+</html>
