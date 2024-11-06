@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salpagrilli.info kebab&diesel</title>
+    <!-- Favicon -->
+    <link rel="icon" href="kuva.png" type="image/png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e4f2cb;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .bonus-text {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            font-size: 36px;
+            color: red;
+            font-weight: bold;
+            white-space: nowrap;
+            background-color: yellow;
+            padding: 5px 15px;
+            border-radius: 5px;
+            animation: slide 10s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: #00cc00;
+        }
+
+        .logo img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin-left: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .sidebar {
+            background-color: #b30000;
+            color: #fff;
+            padding: 20px;
+            width: 220px;
+            position: absolute;
+            top: 300px;  /* Siirretty alemmaksi */
+            left: 200px;
+            height: auto;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .sidebar p {
+            margin: 8px 0;
+            color: yellow;
+        }
+
+        .main-content {
+            width: 80%;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .promo-banner {
+            background-color: #ffffcc;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: red;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: none;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            background-color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        .product .name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product .price {
+            color: red;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .action-buttons button {
+            background-color: #fff;
+            border: 2px solid #333;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo img {
+                width: 150px;
+            }
+
+            .product-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo img {
+                width: 120px;
+            }
+
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Online Bonus Text with Background -->
+    <div class="bonus-text">ONLINE BONUS 10%</div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="contact-info">📞 045 652 7667</div>
+        <button style="background-color: #444; color: #fff; padding: 8px 12px; border: none; cursor: pointer;">Kirjaudu sisään</button>
+    </header>
+
+    <!-- Logo Placeholder -->
+    <div class="logo">
+        <img src="logo.jpg.png" alt="Logo Placeholder">
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Ruokalista</a>
+        <a href="#">Ota Yhteyttä</a>
+        <a href="#">Sivukartta</a>
+        <a href="#">Yhteystiedot</a>
+        <a href="#">Kotiinkuljetus</a>
+        <a href="#">Lounas</a>
+    </nav>
+
+    <!-- Sidebar with Links -->
+    <div class="sidebar">
+        <h3>Tuoteryhmät</h3>
+        <a href="pizzat.html"><p>Pizzat</p></a>
+        <a href="salpazonet.html"><p>Salpazonet</p></a>
+        <a href="kebabit.html"><p>Kebabit</p></a>
+        <a href="burritot.html"><p>Burritot</p></a>
+        <a href="salaatit.html"><p>Salaatit</p></a>
+        <a href="pastat.html"><p>Pastat</p></a>
+        <a href="hampurilaiset.html"><p>Hampurilaiset</p></a>
+        <a href="tarjoukset.html"><p>Tarjoukset</p></a>
+        <a href="juoma.html"><p>Juoma</p></a>
+        <div style="margin-top: 20px; color: yellow;">Avoinna: <br> ma : suljettu<br> ti-pe : 21-22<br> la-su : äskön</div>
+        <div style="color: yellow; margin-top: 20px;">Ilmainen kotiinkuljetus + 75€ tilauksille.<br> Kuljetusmaksu +35€</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            <img src="onlinebonus.png" alt="Online Bonus Placeholder">
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button>Uutuudet</button>
+            <button>Suositut</button>
+            <button>Myydyimmät</button>
+        </div>
+
+        <!-- Product List -->
+        <div class="product-list">
+            <div class="product">
+                <img src="-kinkku.jpg" alt="Product Image">
+                <div class="name">4. Francescana</div>
+                <div class="options">Mausteet: Oregano, Valkosipuli</div>
+                <div class="price">10,00 €</div>
+            </div>
+            <div class="product">
+                <img src="ranskalainen-kebab.jpg" alt="Product Image">
+                <div class="name">10. Frutti</div>
+                <div class="options">Mausteet: Oregano, Valkosipuli</div>
+                <div class="price">11,00 €</div>
+            </div>
+            <div class="product">
+                <img src="Screenshot_1.png" alt="Product Image">
+                <div class="name">Juustopekoni</div>
+                <div class="price">9,00 €</div>
+            </div>
+            <div class="product">
+                <img src="kuvatulossa.png" alt="Product Image">
+                <div class="name">Kebab Pita</div>
+                <div class="price">8,00 €</div>
+            </div>
+            <div class="product">
+                <img src="vega.png" alt="Product Image">
+                <div class="name">Vegetariano Pizza</div>
+                <div class="price">9,50 €</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 salpagrilli.info. Kaikki oikeudet pidätetään.
+    </footer>
+</body>
+</html>
