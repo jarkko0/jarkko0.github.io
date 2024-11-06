@@ -3,177 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>salpagrilli.info!</title>
+    <title>salpagrilli.info kebab&diesel</title>
+    <!-- Favicon -->
+    <link rel="icon" href="kuva.png" type="image/png">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #c0ff33;
-            color: #333;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        header {
-            background-color: #ff6600;
-            padding: 20px;
-            text-align: center;
-            color: #fff;
-            font-size: 2.5em;
-            font-weight: bold;
-            position: relative;
-        }
-        nav {
-            background-color: #333;
-            color: #fff;
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e4f2cb;
+            color: #333;
             display: flex;
             justify-content: center;
-            padding: 10px;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
         }
+
+        .bonus-text {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            font-size: 36px;
+            color: red;
+            font-weight: bold;
+            white-space: nowrap;
+            background-color: yellow;
+            padding: 5px 15px;
+            border-radius: 5px;
+            animation: slide 10s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: #00cc00;
+        }
+
+        .logo img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin-left: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
         nav a {
-            color: #ffcc00;
+            color: #fff;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 1.2em;
+            font-size: 18px;
         }
-        nav a:hover {
-            text-decoration: underline;
-        }
+
         .sidebar {
-            background-color: #ff3333;
-            width: 200px;
-            float: left;
-            padding: 10px;
+            background-color: #b30000;
             color: #fff;
-            height: 100vh;
+            padding: 20px;
+            width: 220px;
+            position: absolute;
+            top: 300px;  /* Siirretty alemmaksi */
+            left: 200px;
+            height: auto;
         }
-        .sidebar h2 {
-            font-size: 1.5em;
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
         }
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
+
+        .sidebar p {
+            margin: 8px 0;
+            color: yellow;
         }
-        .sidebar ul li {
-            padding: 5px 0;
-        }
-        .sidebar ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .sidebar ul li a:hover {
-            text-decoration: underline;
-        }
+
         .main-content {
-            margin-left: 220px;
+            width: 80%;
             padding: 20px;
-            background-color: #fff;
-            color: #333;
+            margin-top: 40px;
+            text-align: center;
         }
-        .main-content h2 {
-            color: #ff3333;
-            font-size: 2em;
-            margin-top: 0;
-        }
-        .content-box {
-            background-color: #ffcc99;
-            border: 2px solid #ff6600;
-            padding: 20px;
+
+        .promo-banner {
+            background-color: #ffffcc;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: red;
+            font-weight: bold;
             margin-bottom: 20px;
+            background: none;
         }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            background-color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        .product .name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product .price {
+            color: red;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .action-buttons button {
+            background-color: #fff;
+            border: 2px solid #333;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             position: fixed;
             width: 100%;
             bottom: 0;
         }
-        .download-button {
-            background-color: #ff6600;
-            color: #fff;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            border: 3px solid #333;
-            cursor: pointer;
-            margin: 20px auto;
-            display: block;
-            text-align: center;
-            animation: bounce 1s infinite;
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo img {
+                width: 150px;
+            }
+
+            .product-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        /* Kirjautumisnappula */
-        .login-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #ffcc00;
-            padding: 10px 20px;
-            font-size: 1em;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
+
+        @media screen and (max-width: 480px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo img {
+                width: 120px;
+            }
+
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Taustamusiikki -->
-    <audio autoplay loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        Selaimesi ei tue ääniominaisuuksia.
-    </audio>
+    <!-- Online Bonus Text with Background -->
+    <div class="bonus-text">ONLINE BONUS 10%</div>
 
+    <!-- Header Section -->
     <header>
-        SALPAGRILLI.INFO - KEBAB & DIESEL
-        <button class="login-button">Kirjaudu</button>
+        <div class="contact-info">📞 045 652 7667</div>
+        <button style="background-color: #444; color: #fff; padding: 8px 12px; border: none; cursor: pointer;">Kirjaudu sisään</button>
     </header>
 
+    <!-- Logo Placeholder -->
+    <div class="logo">
+        <img src="logo.jpg.png" alt="Logo Placeholder">
+    </div>
+
+    <!-- Navigation -->
     <nav>
-        <a href="bensat.html">Bensat</a>
-        <a href="diisselit.html">Diisselit</a>
-        <a href="ruokalista.html">Ruokalista</a>
-        <a href="yhteystiedot.html">Yhteystiedot</a>
-        <a href="lounas.html">Lounas</a>
+        <a href="#">Ruokalista</a>
+        <a href="#">Ota Yhteyttä</a>
+        <a href="#">Sivukartta</a>
+        <a href="#">Yhteystiedot</a>
+        <a href="#">Kotiinkuljetus</a>
+        <a href="#">Lounas</a>
     </nav>
 
+    <!-- Sidebar with Links -->
     <div class="sidebar">
-        <h2>Tuoteryhmät</h2>
-        <ul>
-            <li><a href="bensat.html">Bensat</a></li>
-            <li><a href="diisselit.html">Diisselit</a></li>
-            <li><a href="oljyt.html">Öljyt</a></li>
-            <li><a href="burritot.html">Burritot</a></li>
-            <li><a href="pitkakesto.html">Pitkäkestoinen Bensa</a></li>
-            <li><a href="tarjoukset.html">Tarjoukset</a></li>
-            <li><a href="kebab.html">Kebab</a></li>
-            <li><a href="pizza.html">Sovellus</li>
-        </ul>
-        <p><strong>Aukioloajat:</strong><br>
-            Ma: Suljettu<br>
-            Ti-Pe: 21-22<br>
-            La-Su: nyt</p>
+        <h3>Tuoteryhmät</h3>
+        <a href="pizzat.html"><p>Pizzat</p></a>
+        <a href="salpazonet.html"><p>Salpazonet</p></a>
+        <a href="kebabit.html"><p>Kebabit</p></a>
+        <a href="burritot.html"><p>Burritot</p></a>
+        <a href="salaatit.html"><p>Salaatit</p></a>
+        <a href="pastat.html"><p>Pastat</p></a>
+        <a href="hampurilaiset.html"><p>Hampurilaiset</p></a>
+        <a href="tarjoukset.html"><p>Tarjoukset</p></a>
+        <a href="juoma.html"><p>Juoma</p></a>
+        <div style="margin-top: 20px; color: yellow;">Avoinna: <br> ma : suljettu<br> ti-pe : 21-22<br> la-su : äskön</div>
+        <div style="color: yellow; margin-top: 20px;">Ilmainen kotiinkuljetus + 75€ tilauksille.<br> Kuljetusmaksu +35€</div>
     </div>
 
+    <!-- Main Content -->
     <div class="main-content">
-        <h2>Bensan Maailma</h2>
-        <div class="content-box">
-            <p>Bensa, tuo moottorien elämänlähde, on auttanut ihmisiä liikkumaan jo vuosisatoja. Tule ja koe bensan syvä historia sekä sen tarjoama energia!</p>
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            <img src="onlinebonus.png" alt="Online Bonus Placeholder">
         </div>
-        <h2>Diisselin Tulevaisuus</h2>
-        <div class="content-box">
-            <p>Diisseli on aina ollut vahva ja kestävä polttoaine. Sen käyttö kasvaa, ja tarjoamme sitä parhailla hinnoilla. Älä missaa diisselin voimaa!</p>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button>Uutuudet</button>
+            <button>Suositut</button>
+            <button>Myydyimmät</button>
         </div>
-        <a href="https://www.mediafire.com/file/s8cs1gz7wjelfzx/eemelinbensatietokanta.rar/file" target="_blank" class="download-button">DOWNLOAD!</a>
+
+        <!-- Product List -->
+        <div class="product-list">
+            <div class="product">
+                <img src="-kinkku.jpg" alt="Product Image">
+                <div class="name">4. Francescana</div>
+                <div class="options">Mausteet: Oregano, Valkosipuli</div>
+                <div class="price">10,00 €</div>
+            </div>
+            <div class="product">
+                <img src="ranskalainen-kebab.jpg" alt="Product Image">
+                <div class="name">10. Frutti</div>
+                <div class="options">Mausteet: Oregano, Valkosipuli</div>
+                <div class="price">11,00 €</div>
+            </div>
+            <div class="product">
+                <img src="Screenshot_1.png" alt="Product Image">
+                <div class="name">Juustopekoni</div>
+                <div class="price">9,00 €</div>
+            </div>
+            <div class="product">
+                <img src="kuvatulossa.png" alt="Product Image">
+                <div class="name">Kebab Pita</div>
+                <div class="price">8,00 €</div>
+            </div>
+            <div class="product">
+                <img src="vega.png" alt="Product Image">
+                <div class="name">Vegetariano Pizza</div>
+                <div class="price">9,50 €</div>
+            </div>
+        </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        © 2024 salpagrilli.info. Kaikki oikeudet pidetään.
+        © 2025 salpagrilli.info. Kaikki oikeudet pidätetään.
     </footer>
-
 </body>
 </html>
-
