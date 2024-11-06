@@ -327,10 +327,19 @@
     </div>
 
     <!-- Taustamusiikki -->
-    <audio autoplay loop>
+    <audio id="background-music" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
         Selaimesi ei tue ääniominaisuuksia.
     </audio>
+
+    <script>
+        // Soitetaan musiikki, kun käyttäjä klikkaa sivulla
+        document.body.addEventListener('click', function() {
+            var music = document.getElementById('background-music');
+            music.play();
+        });
+    </script>
+
     
 <!-- Viirus Kuva Linkkinä ilman reunoja ja kimalluksia -->
 <div class="action-buttons" style="position: relative; margin-top: 20px; margin-bottom: 50px; width: 100%; text-align: center;">
